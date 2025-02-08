@@ -182,6 +182,24 @@ li {
     transform: scale(1.1);  /* Un pequeño aumento de tamaño */
 }
 
+.button-clear {
+    display: flex;
+    background-color: #d9534f;  /* Rojo claro */
+    color: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    justify-content: space-around;
+    border-radius: 25px;
+    margin: 20px 0;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.button-clear:hover {
+    background-color: #c9302c;  /* Rojo más intenso al pasar el mouse */
+}
+
 @media screen and (max-width: 767px) {
 
     .header-banner{

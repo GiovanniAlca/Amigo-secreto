@@ -9,13 +9,21 @@ nombre.addEventListener("input", function (event) {
 });
 
 function agregarAmigo() {
-    if (nombre.value.length > 0) {
-        listaAmigos.push(nombre.value);
-        actualizarLista();
-        nombre.value = "";
-    } else {
-        alert("Por favor, inserte un nombre.");
+    let nuevoAmigo = nombre.value.trim();
+
+    if (nuevoAmigo.length === 0) {
+        alert ("Por favor, ingrese un nombre.");
+        return;
     }
+
+    if (listaAmigos.some(amigo => amigo.toLowerCase() === nuevoAmigo.toLowerCase())) {
+        alert("Este nombre ya está en la lista.");
+        return;      
+    }
+
+    listaAmigos.push(nuevoAmigo);
+    actualizarLista();
+    nombre.value = "";
 }
 
 function actualizarLista() {
@@ -63,4 +71,11 @@ function sortearAmigo() {
             amigosSorteados.push(ganador);
         }
     }, intervalo);
+}
+
+function limpiarTodo() {
+    listaAmigos=[];
+    amigosSorteados=[];
+    lista.innerHTML = "";
+    document.getElementById("resultado").innerHTML="";
 }
