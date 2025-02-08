@@ -199,6 +199,18 @@ li {
 .button-clear:hover {
     background-color: #c9302c;  /* Rojo más intenso al pasar el mouse */
 }
+.input-valido {
+    border: 2px solid green;
+    background-color: #eaffea;
+    transition: all 0.3s ease;
+}
+
+.input-invalido {
+    border: 2px solid red;
+    background-color: #ffeaea;
+    transition: all 0.3s ease;
+}
+
 
 @media screen and (max-width: 767px) {
 

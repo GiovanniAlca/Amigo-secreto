@@ -11,20 +11,29 @@ nombre.addEventListener("input", function (event) {
 function agregarAmigo() {
     let nuevoAmigo = nombre.value.trim();
 
+    // Limpiar clases previas
+    nombre.classList.remove("input-valido", "input-invalido");
+
     if (nuevoAmigo.length === 0) {
-        alert ("Por favor, ingrese un nombre.");
+        alert("Por favor, ingrese un nombre.");
+        nombre.classList.add("input-invalido"); // Marcar como inválido
         return;
     }
 
     if (listaAmigos.some(amigo => amigo.toLowerCase() === nuevoAmigo.toLowerCase())) {
         alert("Este nombre ya está en la lista.");
-        return;      
+        nombre.classList.add("input-invalido"); // Marcar como inválido
+        return;
     }
 
+    // Si es válido
     listaAmigos.push(nuevoAmigo);
     actualizarLista();
     nombre.value = "";
+    nombre.classList.add("input-valido"); // Marcar como válido
+    nombre.focus(); // Devolver el foco para mayor comodidad
 }
+
 
 function actualizarLista() {
     lista.innerHTML = "";
