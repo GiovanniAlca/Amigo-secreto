@@ -11,27 +11,26 @@ nombre.addEventListener("input", function (event) {
 function agregarAmigo() {
     let nuevoAmigo = nombre.value.trim();
 
-    // Limpiar clases previas
     nombre.classList.remove("input-valido", "input-invalido");
 
     if (nuevoAmigo.length === 0) {
         alert("Por favor, ingrese un nombre.");
-        nombre.classList.add("input-invalido"); // Marcar como inválido
+        nombre.classList.add("input-invalido"); 
         return;
     }
 
     if (listaAmigos.some(amigo => amigo.toLowerCase() === nuevoAmigo.toLowerCase())) {
         alert("Este nombre ya está en la lista.");
-        nombre.classList.add("input-invalido"); // Marcar como inválido
+        nombre.classList.add("input-invalido"); 
         return;
     }
 
-    // Si es válido
+
     listaAmigos.push(nuevoAmigo);
     actualizarLista();
     nombre.value = "";
-    nombre.classList.add("input-valido"); // Marcar como válido
-    nombre.focus(); // Devolver el foco para mayor comodidad
+    nombre.classList.add("input-valido"); 
+    nombre.focus(); 
 }
 
 
@@ -67,7 +66,7 @@ function sortearAmigo() {
             clearInterval(intervaloSorteo);
 
             let ganador = amigosDisponibles[Math.floor(Math.random() * amigosDisponibles.length)];
-            resultado.innerHTML = `🎊 ¡El amigo secreto es: <strong>${ganador}</strong>! 🎊`;
+            resultado.innerHTML = `🎊 ¡El amigo secreto es: <strong class="resultado-ganador">${ganador}</strong>! 🎊`;
 
             const listaItems = document.querySelectorAll("#listaAmigos li");
             listaItems.forEach((item) => {
@@ -88,3 +87,4 @@ function limpiarTodo() {
     lista.innerHTML = "";
     document.getElementById("resultado").innerHTML="";
 }
+
