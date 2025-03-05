@@ -1,9 +1,9 @@
 :root {
-    --color-primary: #4B69FD;
+    --color-primary: #5abbfc;
     --color-secondary: #FFF9EB;
     --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
+    --color-button: #fd0100;
+    --color-button-hover: #ed5151;
     --color-text: #444444;
     --color-white: #FFFFFF;
 }
@@ -38,13 +38,14 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px 0 0;
+    gap: 40px;
 }
 
 /* Sección de entrada */
 .input-section {
     flex: 60%;
     background-color: var(--color-secondary);
-    border: 1px solid #000;
+    border: 3px solid #000;
     border-radius: 64px 64px 0 0;
     display: flex;
     flex-direction: column;
@@ -66,9 +67,14 @@ body {
     font-family: "Inter", serif;
     font-size: 36px;
     font-weight: 700;
-    color: var(--color-primary);
+    color: black;
     margin: 10px 0;
     text-align: center;
+}
+
+.imagenAmigo{
+    width: 250px;
+    height: auto;
 }
 
 /* Contenedores de entrada y botón */
@@ -138,7 +144,7 @@ ul {
 
 li {
     margin: 5px;
-    background-color: var(--color-button);
+    background-color: var(--color-primary);
     border: solid var(--color-text);
     color: var(--color-white);
     border-radius: 10px;
@@ -147,7 +153,7 @@ li {
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: #000000;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
@@ -175,7 +181,7 @@ li {
 }
 
 .sorteado {
-    background-color: #05DF05;  /* Verde brillante para resaltar */
+    background-color: #000000;  /* Verde brillante para resaltar */
     color: white;
     font-weight: bold;
     border: 2px solid #000;
@@ -185,7 +191,7 @@ li {
 
 .button-clear {
     display: flex;
-    background-color: #d9534f;  /* Rojo claro */
+    background-color: #584e4e;  /* Rojo claro */
     color: white;
     padding: 15px 40px;
     font-size: 16px;
@@ -198,7 +204,7 @@ li {
 }
 
 .button-clear:hover {
-    background-color: #c9302c;  /* Rojo más intenso al pasar el mouse */
+    background-color: rgb(56, 55, 55);  /* Rojo más intenso al pasar el mouse */
 }
 .input-valido {
     border: 2px solid green;
@@ -233,7 +239,7 @@ li {
 
 .resultado-ganador {
     animation: fadeInScale 0.5s ease-out;
-    color: #05DF05;
+    color: var(--color-button);
     font-size: 24px;
     font-weight: bold;
 }
@@ -254,6 +260,7 @@ li {
 
     .header-banner{
         flex-direction: column;
+        gap: 10px;
     }
     .imagenAmigo{
         width: 100%;
