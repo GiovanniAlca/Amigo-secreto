@@ -19,6 +19,12 @@ function agregarAmigo() {
         return;
     }
 
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nuevoAmigo)) {
+        alert("El nombre solo puede contener letras y espacios.");
+        nombre.classList.add("input-invalido");
+        return;
+    }
+
     if (listaAmigos.some(amigo => amigo.toLowerCase() === nuevoAmigo.toLowerCase())) {
         alert("Este nombre ya está en la lista.");
         nombre.classList.add("input-invalido"); 
